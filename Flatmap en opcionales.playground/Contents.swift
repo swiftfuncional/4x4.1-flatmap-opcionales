@@ -1,3 +1,5 @@
+import Foundation
+
 struct User {
 	let name: String
 	let password: String
@@ -25,4 +27,11 @@ extension Optional {
 
 		return transform(x)
 	}
+}
+
+if let url = NSURL(string: "http://www.swiftfuncional.com"),
+	let data = NSData(contentsOf: url as URL),
+	let content = NSString(data: data as Data, encoding: String.Encoding.utf8.rawValue) {
+
+	//We can use content variable here
 }
