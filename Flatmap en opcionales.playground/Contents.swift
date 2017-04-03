@@ -29,9 +29,6 @@ extension Optional {
 	}
 }
 
-if let url = NSURL(string: "http://www.swiftfuncional.com"),
-	let data = NSData(contentsOf: url as URL),
-	let content = NSString(data: data as Data, encoding: String.Encoding.utf8.rawValue) {
-
-	//We can use content variable here
-}
+let content = NSURL(string: "http://www.swiftfuncional.com")
+	.flatMap { NSData(contentsOf: $0 as URL) }
+	.flatMap { NSString(data: $0 as Data, encoding: String.Encoding.utf8.rawValue) }
