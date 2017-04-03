@@ -5,3 +5,5 @@ struct User {
 	let age: Int
 	let country: String
 }
+
+let userData: [String]? = []
